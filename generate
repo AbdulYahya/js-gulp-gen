@@ -1,0 +1,329 @@
+#!/bin/bash
+
+echo @@@@@@Starting project boilerplate@@@@@@
+
+read -p "What will you call this project? " projectNamevar
+
+
+echo Creating project root dir on your desktop
+cd ~/Desktop && mkdir $projectNamevar
+
+echo Successfully created $projectNamevar under ~/Desktop
+echo CD\'ing into project dir
+cd $projectNamevar
+
+echo Creating basic project structure
+mkdir -p assets/js && mkdir -p assets/css 
+
+echo Initializing npm
+npm init
+
+echo Initializing bower
+bower init
+
+echo Installing dev npm packages
+
+npm install gulp browserify vinyl-source-stream gulp-concat gulp-uglify gulp-util del jshint gulp-jshint bower-files browser-sync jasmine@2.9.0 jasmine-core@2.9.1 karma karma-browserify karma-chrome-launcher karma-cli karma-jasmine karma-jasmine-html-reporter karma-jquery watchify babelify babel-core babel-preset-env --save-dev
+
+echo Installing bower packages
+bower install jquery bootstrap --save 
+
+echo Creating gulpfile
+touch gulpfile.js
+
+echo Creating .jshintrc
+touch .jshintrc
+
+cat <<-\_EOF_ >> .jshintrc
+{ "esversion": 6 }
+_EOF_
+
+cat <<-\_EOF_ >> gulpfile.js
+var babelify = require('babelify');
+var browserify = require('browserify');
+var browserSync = require('browser-sync');
+var concat = require('gulp-concat');
+var del = require('del');
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var lib = require('bower-files') ({  // look at https://github.com/twbs/bootstrap/issues/16663
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+});
+var source = require('vinyl-source-stream');
+var uglify = require('gulp-uglify');
+var utilities = require('gulp-util');
+
+var buildProduction = utilities.env.prod; // append tag '--prod' to gulp command
+
+
+gulp.task('jshint', function() {
+  return gulp.src(['assets/js/*.js', 'spec/*-spec.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+gulp.task('concatJS', function() {
+  return gulp.src(['./assets/js/*.js'])
+    .pipe(concat('allConcat.js'))
+    .pipe(gulp.dest('./tmp'));
+});
+
+gulp.task('concatCSS', function() {
+    return gulp.src(['./assets/css/*.css'])
+      .pipe(concat('app.css'))  // Change to allConcat after browserify issue is solved
+      .pipe(gulp.dest('./tmp'));
+});
+
+gulp.task('jsBrowserify', ['concatJS'], function() {
+  return browserify({ entries: ['./tmp/allConcat.js'] })
+    .transform(babelify.configure({
+      presets: ["env"]
+    }))
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(gulp.dest('./build/assets/js'));
+});
+
+// gulp.task('cssBrowserify', ['concatCSS'], function() {
+//   return browserify({ entries: ['./tmp/allConcat.css'] })
+//     .bundle()
+//     .pipe(source('app.css'))
+//     .pipe(gulp.dest('./build/assets/css'));
+// });
+
+gulp.task('cssBrowserify', ['concatCSS'], function() { // Gulp Error when using Browserify *look into browserify-css
+  return gulp.src(['./tmp/app.css'])
+    .pipe(gulp.dest('./build/assets/css'));
+});
+
+gulp.task('minifyJS', ['jsBrowserify'], function() {
+  return gulp.src('./build/assets/js/app.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/assets/js'));
+});
+
+// gulp.task minifyCSS ??
+
+gulp.task('jsBower', function() {
+  return gulp.src(lib.ext('js').files)
+    .pipe(concat('vendor.min.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('./build/assets/js'));
+});
+
+gulp.task('cssBower', function() {
+  return gulp.src(lib.ext('css').files)
+    .pipe(concat('vendor.css'))
+    // Minify?
+    .pipe(gulp.dest('./build/assets/css'));
+});
+
+gulp.task('bower', ['jsBower', 'cssBower']);
+
+gulp.task('clean', function() {
+  return del(['build', 'tmp']);
+});
+
+gulp.task('build', ['clean'], function() {
+  if (buildProduction) {
+    gulp.start('minifyJS');
+   // Minified version of CSS
+  } else {
+    gulp.start('jsBrowserify');
+    gulp.start('cssBrowserify');
+  }
+
+  gulp.start('bower');
+  // gulp.start('cssBuild'); -- Use Bootstraps SASS?
+});
+
+gulp.task('serve', ['build'], function() {
+  browserSync.init({
+    server: {
+      baseDir: "./",
+      index: "index.html"
+    }
+  });
+
+  gulp.watch(['assets/js/*.js'], ['jsBuild']); // Run jsBuild if any changes are made to any files with ext .js
+  gulp.watch(['assets/css/*.css'], ['cssBuild']); // Run cssBuild if any changes are made to any files with ext .css
+  gulp.watch(['bower.json'], ['bowerBuild']); // Run bowerBuild if any changes are made to our bower.json file
+  gulp.watch(['*.html'], ['htmlBuild']); // Run htmlBuil if any changes are made to any files with ext .html
+  //gulp.watch('scss/*.scss', ['cssBuild']);  -- Use Bootstrap's SASS??
+});
+
+gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function() {
+  browserSync.reload();
+});
+
+gulp.task('cssBuild', ['cssBrowserify'], function() {
+    browserSync.reload();
+});
+
+gulp.task('bowerBuild', ['bower'], function() {
+  browserSync.reload();
+});
+
+gulp.task('htmlBuild', function() {
+  browserSync.reload();
+});
+_EOF_
+
+echo Initializing Jasmine
+./node_modules/.bin/jasmine init
+
+echo Deleting default jasmine.json
+rm spec/support/jasmine.json
+
+echo Creating new default jasmine.json
+cat <<-\_EOF_ >> spec/support/jasmine.json
+{
+  "spec_dir": "spec",
+  "spec_files": [
+    "**/*[sS]pec.js"
+  ],
+  "helpers": [
+    "helpers/**/*.js"
+  ],
+  "stopSpecOnExpectationFailure": true,
+  "random": true
+}
+_EOF_
+
+echo Creating test JS/CSS/Spec files to test gulpfile
+touch assets/js/test.js && touch assets/css/test.css & touch spec/test-spec.js
+
+echo Adding sample test spec to pass karma test run
+
+cat <<-\_EOF_ >> spec/test-spec.js
+describe('test', function() {
+  let x = 5;
+
+  if (true) {
+    x = 6;
+  }
+  console.log(x);
+
+  it('sample test', function() {
+    expect(x).toEqual(6);
+  });
+});
+_EOF_
+
+echo Initializing karma
+karma init
+
+echo Deleting generated karma.conf.js
+rm karma.conf.js
+
+echo Creating new karma.conf.js
+cat <<-\_EOF_ >> karma.conf.js
+// Karma configuration
+
+module.exports = function(config) {
+  config.set({
+
+    // base path that will be used to resolve all patterns (eg. files, exclude)
+    basePath: '',
+
+
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['jasmine', 'jquery-3.2.1', 'browserify'],
+
+
+    // list of files / patterns to load in the browser
+    files: [
+      'assets/js/*.js',
+      'spec/*-spec.js'
+    ],
+
+
+    // list of files / patterns to exclude
+    exclude: [
+    ],
+
+
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+      'assets/js/*.js': ['browserify'],
+      'spec/*-spec.js': ['browserify']
+    },
+
+
+    // Not needed -  Karma autoloads all “sibling” modules that begin with karma
+    // Added just for enhanced readability
+    plugins: [
+      'karma-jquery',
+      'karma-browserify',
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-jasmine-html-reporter'
+    ],
+
+
+    // Babel Transpile ES6 => ES5 to support older browsers
+    browserify: {
+      debug: true,
+      transform: [ ['babelify', {presets: ["env"]}] ]
+    },
+
+
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
+    reporters: ['progress', 'kjhtml'],
+
+
+    // web server port
+    port: 9876,
+
+
+    // enable / disable colors in the output (reporters and logs)
+    colors: true,
+
+
+    // level of logging
+    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    logLevel: config.LOG_INFO,
+
+
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: true,
+
+
+    // start these browsers
+    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
+    browsers: ['Chrome'],
+
+
+    // Continuous Integration mode
+    // if true, Karma captures browsers, runs the tests and exits
+    singleRun: false,
+
+    // Concurrency level
+    // how many browser should be started simultaneous
+    concurrency: Infinity
+  })
+}
+_EOF_
+
+echo Running gulp task:jshint
+gulp jshint
+echo Running gulp task:build with '\--prod\' tag 
+gulp build --prod
+
+
+echo *This will only work if you entered a test command when you initialized npm*
+echo *If this fails check your test command in package.json*
+echo Running npm test
+npm run test 
