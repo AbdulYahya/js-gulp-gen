@@ -1,15 +1,15 @@
  <p align="center"><img width="12.5%" src="media/js_gulp_gen_icon.svg"></p>
  <p align="center"><img width="60%" src="media/js_gulp_gen_logo.png"></p>
 
-<p align="center">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [![Bash Shell](https://img.shields.io/badge/script-bash-blue.svg?style=for-the-badge)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 &nbsp;&nbsp;&nbsp;&nbsp;
 [![GitHub issues](https://img.shields.io/github/issues/AbdulYahya/gulp-boilerplate-gen.svg?style=for-the-badge)](https://github.com/AbdulYahya/gulp-boilerplate-gen/issues)
 &nbsp;&nbsp;&nbsp;&nbsp;
-[![GitHub license](https://img.shields.io/github/license/AbdulYahya/gulp-boilerplate-gen.svg?style=for-the-badge)](https://github.com/AbdulYahya/gulp-boilerplate-gen/blob/master/LICENSE)
-</p>
+[![GitHub license](https://img.shields.io/github/license/AbdulYahya/gulp-boilerplate-gen.svg?style=for-the-badge)](https://ayahya.mit-license.org)
 
-# Basic Overview
+
+## Basic Overview
 
 This bash script takes the headache that is setting up a JS project with npm/gulp/etc..etc.. and automates that process. It keeps you informed on exactly what it is doing when it's doing via terminal messages.
 
