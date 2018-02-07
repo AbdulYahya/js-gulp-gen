@@ -1,5 +1,5 @@
- <p align="center"><img width="12.5%" src=" _media/js_gulp_gen_icon.svg"></p>
- <p align="center"><img width="60%" src="_media/js_gulp_gen_logo.png"></p>
+ <p align="center"><img width="12.5%" src="media/js_gulp_gen_icon.svg"></p>
+ <p align="center"><img width="60%" src="media/js_gulp_gen_logo.png"></p>
 
 <p align="center">
 [![Bash Shell](https://img.shields.io/badge/script-bash-blue.svg?style=for-the-badge)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
