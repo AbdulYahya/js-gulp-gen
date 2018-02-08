@@ -4,7 +4,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 [![Bash Shell](https://img.shields.io/badge/script-bash-blue.svg?style=for-the-badge)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 &nbsp;&nbsp;&nbsp;&nbsp;
-[![GitHub issues](https://img.shields.io/github/issues/AbdulYahya/gulp-boilerplate-gen.svg?style=for-the-badge)](https://github.com/AbdulYahya/gulp-boilerplate-gen/issues)
+[![GitHub issues](https://img.shields.io/github/issues/AbdulYahya/js-gulp-gen.svg?style=for-the-badge)](https://github.com/AbdulYahya/js-gulp-gen/issues)
 &nbsp;&nbsp;&nbsp;&nbsp;
 [![GitHub license](https://img.shields.io/github/license/AbdulYahya/gulp-boilerplate-gen.svg?style=for-the-badge)](https://ayahya.mit-license.org)
 
@@ -21,7 +21,7 @@ After the script is done generating the boilerplate project, it will run gulp js
 First, clone this repo:
 
 ```sh
-$ git clone https://github.com/AbdulYahya/js-gulp-gen.git
+$ git clone https://github.com/AbdulYahya/gulp-boilerplate-gen.git
 ```
 
 From your terminal, cd into the directory you just cloned:
