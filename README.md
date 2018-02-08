@@ -21,7 +21,7 @@ After the script is done generating the boilerplate project, it will run gulp js
 First, clone this repo:
 
 ```sh
-$ git clone https://github.com/AbdulYahya/gulp-boilerplate-gen.git
+$ git clone https://github.com/AbdulYahya/js-gulp-gen.git
 ```
 
 From your terminal, cd into the directory you just cloned:
