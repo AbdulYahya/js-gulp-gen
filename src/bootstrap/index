@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My simplified version of the old game 'Simon Says'.">
+    <meta name="author" content="Abdullah Yahya">
+    <title>JSGG | Bootstrap</title>
+    <link rel="stylesheet" href="build/assets/css/vendor.min.css">
+    <link rel="stylesheet" href="build/assets/css/app.css">
+  </head>
+  <body>
+    <div class="container h-100">
+      <div class="row h-100">
+        <div class="card">
+          <div class="card-body">
+            Yo
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="build/assets/js/vendor.min.js"></script>
+    <script src="build/assets/js/app.js"></script>
+  </body>
+</html>

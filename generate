@@ -121,7 +121,7 @@ elif [ "$framework" == "bootstrap" ]; then
   cat $DIR/src/bootstrap/index > index.html
 
   echo Installing dev npm packages
-  # npm instal --save-dev ......
+  npm install --save-dev babel-core babel-preset-env babelify bower-files browser-sync browserify del gulp gulp-clean-css gulp-concat gulp-imagemin gulp-jshint gulp-uglify gulp-util jasmine@2.9.0 jasmine-core@2.9.1 jshint karma karma-browserify karma-chrome-launcher karma-cli karma-jasmine karma-jasmine-html-reporter karma-jquery vinyl-source-stream watchify
 
   echo Installing bower bootstrap package
   bower install bootstrap --save
@@ -150,7 +150,7 @@ elif [ "$framework" == "tailwind" ]; then
   echo "@tailwind preflight; @tailwind utilities;" > assets/css/tailwind.css
 
   echo Installing dev npm packages
-  npm install autoprefixer babel-core babel-preset-env babelify bower-files browser-sync browserify del gulp gulp-clean-css gulp-concat gulp-imagemin gulp-jshint gulp-postcss gulp-uglify gulp-util jasmine@2.9.0 jasmine-core@2.9.1 jshint karma karma-browserify karma-chrome-launcher karma-cli karma-jasmine karma-jasmine-html-reporter karma-jquery tailwindcss vinyl-source-stream watchify --save-dev
+  npm install --save-dev autoprefixer babel-core babel-preset-env babelify bower-files browser-sync browserify del gulp gulp-clean-css gulp-concat gulp-imagemin gulp-jshint gulp-postcss gulp-uglify gulp-util jasmine@2.9.0 jasmine-core@2.9.1 jshint karma karma-browserify karma-chrome-launcher karma-cli karma-jasmine karma-jasmine-html-reporter karma-jquery tailwindcss vinyl-source-stream watchify
 
   echo Tailoring gulpfile for Tailwind
   cat $DIR/src/tailwind/gulpfile > gulpfile.js
