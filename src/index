@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My simplified version of the old game 'Simon Says'.">
+    <meta name="author" content="Abdullah Yahya">
+    <title>JSGG | Generated Project</title>
+    <link rel="stylesheet" href="build/assets/css/vendor.css">
+    <link rel="stylesheet" href="build/assets/css/app.css">
+    <style>
+      .nolink-style {
+        text-decoration: none;
+      }
+
+      .nolink-style a:visited  {
+        color: #606f7b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container flex h-screen">
+      <div class="my-auto mx-auto max-w-sm rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="build/assets/images/js_gulp_gen_logo.png" alt="JS-Gulp-Gen Logo">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">Project Generated</div>
+          <p class="text-grey-darker text-base">
+            Thank you for using JS-Gulp-Gen to help generate your project!
+          </p>
+          <p class="mt-6 text-grey-darker text-xs">
+            If you run into any issues/errors, please submit an issue on <a href="https://github.com/AbdulYahya/js-gulp-gen/issues" target="_blank">Github</a>
+          </p>
+        </div>
+        <div class="px-6 py-4">
+          <span class="inline-block nolink-style bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><a href="https://github.com/AbdulYahya" target="_blank">#github</a></span>
+          <span class="inline-block nolink-style bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><a href="https://linkedin.com/in/ayahya094" target="_blank">#linkedin</a></span>
+          <span class="inline-block nolink-style bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><a href="https://twitter.com/abdul_jt" target="_blank">#twitter</a></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
