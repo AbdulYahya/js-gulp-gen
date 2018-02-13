@@ -8,7 +8,6 @@ const gulp = require('gulp');
 const imagemin = require('gulp-imagemin');
 const jshint = require('gulp-jshint');
 const lib = require('bower-files') ();
-const moment = require('moment');
 const source = require('vinyl-source-stream');
 const uglify = require('gulp-uglify');
 const utilities = require('gulp-util');
