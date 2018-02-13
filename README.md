@@ -2,9 +2,9 @@
  <p align="center"><img width="60%" src="src/media/js_gulp_gen_logo.png"></p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Bash Version](https://img.shields.io/badge/Ver.-0.1.0-brightgreen.svg?style=for-the-badge)
+[![Bash Version](https://img.shields.io/badge/Ver.-0.1.0-brightgreen.svg?style=for-the-badge)](https://github.com/AbdulYahya/js-gulp-gen)
 &nbsp;&nbsp;&nbsp;&nbsp;
-[![Bash Shell](https://img.shields.io/badge/script-bash-blue.svg?style=for-the-badge)](https://en.wikipedia.org/wiki/Bash_(Unix_shell)
+[![Bash Shell](https://img.shields.io/badge/script-bash-blue.svg?style=for-the-badge)](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
 &nbsp;&nbsp;&nbsp;&nbsp;
 [![GitHub issues](https://img.shields.io/github/issues/AbdulYahya/js-gulp-gen.svg?style=for-the-badge)](https://github.com/AbdulYahya/js-gulp-gen/issues)
 &nbsp;&nbsp;&nbsp;&nbsp;
