@@ -6,7 +6,7 @@
     <meta name="description" content="My simplified version of the old game 'Simon Says'.">
     <meta name="author" content="Abdullah Yahya">
     <title>JSGG | Generated Project</title>
-    <link rel="stylesheet" href="build/assets/css/vendor.css">
+    <link rel="stylesheet" href="build/assets/css/vendor.min.css">
     <link rel="stylesheet" href="build/assets/css/app.css">
     <style>
       .nolink-style {
