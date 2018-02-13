@@ -28,13 +28,13 @@
             Thank you for using JS-Gulp-Gen to help generate your project!
           </p>
           <p class="mt-6 text-grey-darker text-xs">
-            If you run into any issues/errors, please submit an issue on <a href="https://github.com/AbdulYahya/js-gulp-gen/issues" target="_blank">Github</a>
+            If you run into any issues/errors, please submit an issue on <a class="nolink-style text-grey-darker hover:bg-grey" href="https://github.com/AbdulYahya/js-gulp-gen/issues" target="_blank">Github</a>
           </p>
         </div>
         <div class="px-6 py-4">
-          <span class="inline-block nolink-style bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><a href="https://github.com/AbdulYahya" target="_blank">#github</a></span>
-          <span class="inline-block nolink-style bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"><a href="https://linkedin.com/in/ayahya094" target="_blank">#linkedin</a></span>
-          <span class="inline-block nolink-style bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"><a href="https://twitter.com/abdul_jt" target="_blank">#twitter</a></span>
+          <span class="inline-block bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold mr-2"><a class="nolink-style text-grey-darker" href="https://github.com/AbdulYahya" target="_blank">#github</a></span>
+          <span class="inline-block bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold mr-2"><a class="nolink-style text-grey-darker" href="https://linkedin.com/in/ayahya094" target="_blank">#linkedin</a></span>
+          <span class="inline-block bg-grey-lighter hover:bg-grey rounded-full px-3 py-1 text-sm font-semibold"><a class="nolink-style text-grey-darker" href="https://twitter.com/abdul_jt" target="_blank">#twitter</a></span>
         </div>
       </div>
     </div>
