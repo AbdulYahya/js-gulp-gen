@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="My simplified version of the old game 'Simon Says'.">
+    <meta name="author" content="Abdullah Yahya">
+    <title>JSGG | Bootstrap</title>
+    <link rel="stylesheet" href="build/assets/css/vendor.min.css">
+    <link rel="stylesheet" href="build/assets/css/app.css">
+    <style>
+      html, body {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container d-flex h-100">
+      <div class="row align-self-center w-100">
+        <div class="card mx-auto">
+          <img class="card-img-top" src="build/assets/images/js_gulp_gen_logo.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Project Generated</h5>
+            <p class="card-text font-weight-light text-muted">Thank you for using JS-Gulp-Gen to help generate your project!</p>
+            <p class="card-text"><small class="font-weight-light text-muted">If you run into any issues/errors, please submit an issue on <a class="text-muted" href="https://github.com/AbdulYahya/js-gulp-gen/issues" target="_blank">Github</a></small></p>
+            <a class="btn btn-secondary mr-2" href="https://github.com/AbdulYahya" target="_blank">#github</a>
+            <a class="btn btn-secondary mr-2" href="https://linkedin.com/in/ayahya094" target="_blank">#linkedin</a>
+            <a class="btn btn-secondary" href="https://twitter.com/abdul_jt" target="_blank">#twitter</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="build/assets/js/vendor.min.js"></script>
+    <script src="build/assets/js/app.js"></script>
+  </body>
+</html>

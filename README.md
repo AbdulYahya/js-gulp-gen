@@ -34,23 +34,40 @@ From your terminal, cd into the directory you just cloned:
 $ cd ~/Desktop/js-gulp-gen
 ```
 
-To generate a new boilerplate project:
+Before generating your project, you will need to decide on whether or not you would like to use a CSS framework.
+And if so, which one? You have a few different options to choose from:
+
+> :bell: Note, whatever you decide on generating, your project will be Fully functional (NPM/Gulp/Karma-Jasmine)
+
+> Commands denoted by :construction: are currently not available, but will be in the very near future.
+
+| Generation Commands | Framework | Description |
+| :------------- | :------------- | :------------- |
+|:construction: `$ ./generate` :construction:| Barebones | No CSS what so ever |        
+|`$ ./generate -f bootstrap`| Bootstrap | The latest v4.x release of Bootstrap |
+|:construction: `$ ./generate -f materialize` :construction:| Materialize | The latest v0.xx.x release of Materialize |
+|`$ ./generate -f tailwind`| Tailwind | The latest v0.x.x release of Tailwind |
+
+----
+
+###### :bangbang: `$ npm test` does not work right off the bat, you have to make the following edit to your package.json.
+<br />
+
+Change the default test script:
 
 ```sh
-$ ./generate
+...
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
 ```
 
-After your project has been successfully generated, to get the command `npm test` to work, you will need to edit your `package.json` file.
-
-Change this:
-
+With karma's test script command:
 ```sh
-"test": "echo \"Error: no test specified\" && exit 1"
-```
-
-To this:
-```sh
-"test": "karma start karma.conf.js"
+...
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
 ```
 
 Now test it by running:
@@ -58,6 +75,7 @@ Now test it by running:
 ```sh
 npm test
 ```
+
 ## License
 
 [MIT License][Arbitrary case-insensitive reference text]
