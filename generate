@@ -23,11 +23,15 @@ while getopts "f:" opt; do
 done
 
 if [ -z "$framework" ]; then
-  echo No framework selected. Generating Core JS-Gulp Project without a framework.
+  printf "\n%s\n\n" "@@@@Barebones is not yet available, sorry!@@@"
+  exit -3;
+  # echo No framework selected. Generating Core JS-Gulp Project without a framework.
 elif [ "$framework" == "bootstrap" ]; then
   echo Generating Core JS-Gulp Project with Bootstrap!
 elif [ "$framework" == "materialize" ]; then
-  echo Generating Core JS-Gulp Project with Materialize!
+  printf "\n%s\n\n" "@@@@Materialize is not yet available, sorry!@@@"
+  exit -3;
+  # echo Generating Core JS-Gulp Project with Materialize!
 elif [ "$framework" == "tailwind" ]; then
   echo Generating Core JS-Gulp Project with Tailwind!
 else
