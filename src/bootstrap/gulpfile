@@ -13,6 +13,7 @@ const lib = require('bower-files') ({     // look at https://github.com/twbs/boo
       "main": [
         "less/bootstrap.less",
         "dist/css/bootstrap.css",
+        "assets/js/vendor/popper.min.js",
         "dist/js/bootstrap.js"
       ]
     }
